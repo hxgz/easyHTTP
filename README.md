@@ -33,7 +33,8 @@ class ExampleClient(Client):
 # 异步调用
 await ExampleClient().call('https://baidu.com/')
 # 同步调用
-ExampleClient().call_sync('https://baidu.com/')
+ExampleClient().
+('https://baidu.com/')
 ```
 > 类变量
 
@@ -56,14 +57,15 @@ ExampleClient().call_sync('https://baidu.com/')
 `headers` dict http的头  
 
 返回是`transform` 定义的返回内容
-**call_sync**
+
+**call_sync** . 
 `call`的同步版
 
 ### RedirectClient
 继承`Client`, 获取302跳转url，使用Header中的`Location`
 
 ### API
-`Client`基本已经够用
+`Client`基本已经够用 . 
 `API` 继承 `Client`，可以更好自定义url的内容
 
 增加类变量 . 
@@ -103,7 +105,7 @@ se.call(Client,"http://baidu.com/other_page") # 参数和
 
 `cookie` 成员变量，获取当前cookie数据
 
-**async def call(self, client, *args, **kwargs)**  
+**async def call(self, client, *args, \*\*kwargs)**  
 `client` 如 `Client`,`API`,`FileClient`  
 其他参数和client一致  
 
