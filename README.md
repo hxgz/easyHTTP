@@ -35,7 +35,7 @@ await ExampleClient().call('https://baidu.com/')
 # 同步调用
 ExampleClient().call_sync('https://baidu.com/')
 ```
-* 类变量
+> 类变量
 
 `METHOD` method方法  
 `CONTENT_TYPE` 指定http的请求content_type  
@@ -43,7 +43,8 @@ ExampleClient().call_sync('https://baidu.com/')
 `TIMEOUT`: 超时时间  
 `FOLLOW_REDIRECTS`: 302返回时是否自动再次请求redirect_url,默认是  
 
-* 函数
+> 函数
+
 **transform(self, resp_data)**  
 `resp_data` 解析出来的返回结果  
 需要使用方自定义，默认返回response的body  
@@ -65,7 +66,7 @@ ExampleClient().call_sync('https://baidu.com/')
 `Client`基本已经够用
 `API` 继承 `Client`，可以更好自定义url的内容
 
-增加类变量
+增加类变量 . 
 `HOST` server的地址，如 "https://api.github.com/"  
 `PATH` 路径，支持format  
 
