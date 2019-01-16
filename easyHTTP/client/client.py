@@ -35,11 +35,15 @@ class Client(SyncCallMixin):
             elif cls.CONTENT_TYPE == ContentType.URLEncoded:
                 return urlencode(data)
 
-    def _build_request(self, url, data, headers):
-        final_headers = {
+    def get_headers(self):
+        return {
             "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
             # "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1"
         }
+
+    def _build_request(self, url, data, headers):
+        final_headers = self.get_headers()
+
         if self.METHOD == "POST":
             final_headers["Content-Type"] = self.CONTENT_TYPE
 

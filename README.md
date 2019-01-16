@@ -64,10 +64,10 @@ ExampleClient().call_sync('https://baidu.com/')
 继承`Client`, 获取302跳转url，使用Header中的`Location`
 
 ### API
-`Client`基本已经够用 . 
+`Client`基本已经够用  
 `API` 继承 `Client`，可以更好自定义url的内容
 
-增加类变量 . 
+增加类变量  
 `HOST` server的地址，如 "https://api.github.com/"  
 `PATH` 路径，支持format  
 
