@@ -12,5 +12,5 @@ setup(
     author='hxgz',
     author_email='jwzhou0905@gmail.com',
     url='',
-    packages=['easyHTTP'],
+    packages=['easyHTTP','easyHTTP/client'],
 )
