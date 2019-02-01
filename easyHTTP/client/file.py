@@ -3,6 +3,7 @@
 import os
 import cgi
 from urllib.parse import unquote
+from urllib.parse import urlparse
 
 from .client import Client
 
