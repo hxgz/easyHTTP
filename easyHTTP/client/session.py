@@ -12,8 +12,16 @@ class Session(SyncCallMixin):
         for c in response.headers.get_list("Set-Cookie"):
             self.cookie.load(c)
 
-    def cookie_output(self):
-        return self.cookie.output(attrs=[], header="", sep=";")
+    def cookie_output(self, keys=None):
+        if keys:
+            _ck = SimpleCookie({
+                k: v
+                for k, v in self.cookie.items()
+                if k in keys
+            })
+            return _ck.output(attrs=[], header="", sep=";")
+        else:
+            return self.cookie.output(attrs=[], header="", sep=";")
 
     async def call(self, client, *args, **kwargs):
         headers = kwargs.get('headers', {})
